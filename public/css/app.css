@@ -1,0 +1,42 @@
+/* ===== Paleta de AppSalon ===== */
+:root {
+    --salon: #8e3b75;
+    --salon-oscuro: #6b2a58;
+    --salon-claro: #f8eef5;
+}
+
+.bg-salon   { background-color: var(--salon) !important; }
+.text-salon { color: var(--salon) !important; }
+
+.btn-salon {
+    background-color: var(--salon);
+    border-color: var(--salon);
+    color: #fff;
+}
+.btn-salon:hover,
+.btn-salon:focus {
+    background-color: var(--salon-oscuro);
+    border-color: var(--salon-oscuro);
+    color: #fff;
+}
+
+/* Encabezado de la página de inicio */
+.hero {
+    background: linear-gradient(135deg, var(--salon) 0%, #c2185b 100%);
+    color: #fff;
+}
+
+/* Tarjetas de servicios */
+.card-servicio {
+    transition: transform .15s ease, box-shadow .15s ease;
+}
+.card-servicio:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .12) !important;
+}
+
+.precio {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--salon);
+}
