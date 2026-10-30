@@ -7,20 +7,24 @@ use Illuminate\Support\Facades\Schema;
 return new class extends Migration
 {
     /**
-     * Run the migrations.
+     * Crea la tabla de usuarios del sistema AppSalon.
      */
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('usuarios', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->rememberToken();
-            $table->timestamps();
+            $table->string('nombre', 60);
+            $table->string('apellido', 60);
+            $table->string('email', 100)->unique();
+            $table->string('password', 60);              // hash bcrypt (60 caracteres)
+            $table->string('telefono', 10)->nullable();
+            $table->boolean('admin')->default(false);    // 1 = administrador
+            $table->boolean('confirmado')->default(false);
+            $table->string('token', 15)->nullable();     // token de confirmación de cuenta
+            $table->timestamps();                        // created_at y updated_at
         });
 
+        // Tablas internas de Laravel (recuperación de contraseña y sesiones)
         Schema::create('password_reset_tokens', function (Blueprint $table) {
             $table->string('email')->primary();
             $table->string('token');
@@ -37,13 +41,10 @@ return new class extends Migration
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
-        Schema::dropIfExists('users');
-        Schema::dropIfExists('password_reset_tokens');
         Schema::dropIfExists('sessions');
+        Schema::dropIfExists('password_reset_tokens');
+        Schema::dropIfExists('usuarios');
     }
 };
