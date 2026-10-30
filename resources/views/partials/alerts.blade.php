@@ -14,6 +14,14 @@
     </div>
 @endif
 
+{{-- Mensaje de advertencia: ->with('warning', '...') --}}
+@if (session('warning'))
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <i class="bi bi-exclamation-circle-fill me-1"></i> {{ session('warning') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Cerrar"></button>
+    </div>
+@endif
+
 {{-- Aviso general de validación (el detalle aparece debajo de cada campo) --}}
 @if ($errors->any())
     <div class="alert alert-danger alert-dismissible fade show" role="alert">
