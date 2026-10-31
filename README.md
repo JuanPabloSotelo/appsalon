@@ -4,8 +4,8 @@ Aplicación web full-stack para la gestión de un salón de belleza, desarrollad
 Este repositorio corresponde a la **Entrega Intermedia (Semana 11)** del Proyecto Final.
 
 - **Universidad:** Universidad Santiago de Cali
-- **Asignatura:** [Nombre de la asignatura]
-- **Autor(es):** Juan Pablo Sotelo — [agregar integrantes, si aplica]
+- **Asignatura:** Programacion en la Web
+- **Autor(es):** Juan Pablo Sotelo — Juan Esteban Aldana
 
 ---
 
